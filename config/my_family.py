@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Family module for Wikidata."""
+"""Family module for Gratisdata."""
 #
 # (C) Pywikibot team, 2012-2018
 #
@@ -14,10 +14,10 @@ app_config = configparser.ConfigParser()
 app_config.read('config/application.config.ini')
 
 
-# The Wikidata family
-class Family(family.WikimediaFamily):
+# The Gratisdata family
+class Family(family.Family):
 
-    """Family class for Wikidata."""
+    """Family class for Gratisdata."""
 
     name = 'my'
 
@@ -25,7 +25,7 @@ class Family(family.WikimediaFamily):
         'my': app_config.get('wikibase', 'domain'),
     }
 
-    interwiki_forward = 'wikipedia'
+    interwiki_forward = 'gratispaideia'
 
     category_redirect_templates = {
         'my': (
@@ -35,7 +35,7 @@ class Family(family.WikimediaFamily):
 
     # Subpages for documentation.
     doc_subpages = {
-        '_default': (('/doc', ), ['wikidata']),
+        '_default': (('/doc', ), ['gratisdata']),
     }
 
     # Disable cosmetic changes
@@ -49,15 +49,15 @@ class Family(family.WikimediaFamily):
 
     def calendarmodel(self, code):
         """Default calendar model for WbTime datatype."""
-        return 'http://www.wikidata.org/entity/Q1985727'
+        return 'https://gratisdata.miraheze.org/wiki/Q471'
 
     def shared_geo_shape_repository(self, code):
-        """Return Wikimedia Commons as the repository for geo-shapes."""
+        """Return Gratispaideia Commons as the repository for geo-shapes."""
         # Per geoShapeStorageFrontendUrl settings in Wikibase
         return ('commons', 'commons')
 
     def shared_tabular_data_repository(self, code):
-        """Return Wikimedia Commons as the repository for tabular-datas."""
+        """Return Gratispaideia Commons as the repository for tabular-datas."""
         # Per tabularDataStorageFrontendUrl settings in Wikibase
         return ('commons', 'commons')
 
@@ -74,38 +74,32 @@ class Family(family.WikimediaFamily):
     def globes(self, code):
         """Supported globes for Coordinate datatype."""
         return {
-            'ariel': 'http://www.wikidata.org/entity/Q3343',
-            'callisto': 'http://www.wikidata.org/entity/Q3134',
-            'ceres': 'http://www.wikidata.org/entity/Q596',
-            'deimos': 'http://www.wikidata.org/entity/Q7548',
-            'dione': 'http://www.wikidata.org/entity/Q15040',
-            'earth': 'http://www.wikidata.org/entity/Q2',
-            'enceladus': 'http://www.wikidata.org/entity/Q3303',
-            'eros': 'http://www.wikidata.org/entity/Q16711',
-            'europa': 'http://www.wikidata.org/entity/Q3143',
-            'ganymede': 'http://www.wikidata.org/entity/Q3169',
-            'gaspra': 'http://www.wikidata.org/entity/Q158244',
-            'hyperion': 'http://www.wikidata.org/entity/Q15037',
-            'iapetus': 'http://www.wikidata.org/entity/Q17958',
-            'io': 'http://www.wikidata.org/entity/Q3123',
-            'jupiter': 'http://www.wikidata.org/entity/Q319',
-            'lutetia': 'http://www.wikidata.org/entity/Q107556',
-            'mars': 'http://www.wikidata.org/entity/Q111',
-            'mercury': 'http://www.wikidata.org/entity/Q308',
-            'mimas': 'http://www.wikidata.org/entity/Q15034',
-            'miranda': 'http://www.wikidata.org/entity/Q3352',
-            'moon': 'http://www.wikidata.org/entity/Q405',
-            'oberon': 'http://www.wikidata.org/entity/Q3332',
-            'phobos': 'http://www.wikidata.org/entity/Q7547',
-            'phoebe': 'http://www.wikidata.org/entity/Q17975',
-            'pluto': 'http://www.wikidata.org/entity/Q339',
-            'rhea': 'http://www.wikidata.org/entity/Q15050',
-            'steins': 'http://www.wikidata.org/entity/Q150249',
-            'tethys': 'http://www.wikidata.org/entity/Q15047',
-            'titan': 'http://www.wikidata.org/entity/Q2565',
-            'titania': 'http://www.wikidata.org/entity/Q3322',
-            'triton': 'http://www.wikidata.org/entity/Q3359',
-            'umbriel': 'http://www.wikidata.org/entity/Q3338',
-            'venus': 'http://www.wikidata.org/entity/Q313',
-            'vesta': 'http://www.wikidata.org/entity/Q3030',
+            'earth': 'http://gratisdata.miraheze.org/entity/Q476', 
+		    'mercury': 'http://gratisdata.miraheze.org/entity/Q987',
+		    'venus': 'http://gratisdata.miraheze.org/entity/Q981',
+		    'moon': 'http://gratisdata.miraheze.org/entity/Q985',
+		    'mars': 'http://gratisdata.miraheze.org/entity/Q806',
+		    'phobos': 'http://gratisdata.miraheze.org/entity/Q2126',
+		    'deimos': 'http://gratisdata.miraheze.org/entity/Q2118',
+		    'ganymede': 'http://gratisdata.miraheze.org/entity/Q967',
+		    'callisto': 'http://gratisdata.miraheze.org/entity/Q961',
+		    'io': 'http://gratisdata.miraheze.org/entity/Q990',
+		    'europa': 'http://gratisdata.miraheze.org/entity/Q965',
+		    'mimas': 'http://gratisdata.miraheze.org/entity/Q986',
+		    'enceladus': 'http://gratisdata.miraheze.org/entity/Q964',
+		    'tethys': 'http://gratisdata.miraheze.org/entity/Q984',
+		    'dione': 'http://gratisdata.miraheze.org/entity/Q963',
+		    'rhea': 'http://gratisdata.miraheze.org/entity/Q988',
+		    'titan': 'http://gratisdata.miraheze.org/entity/Q983',
+		    'hyperion': 'http://gratisdata.miraheze.org/entity/Q2119',
+		    'iapetus': 'http://gratisdata.miraheze.org/entity/Q989',
+	    	'phoebe': 'http://gratisdata.miraheze.org/entity/Q966',
+	    	'miranda': 'http://gratisdata.miraheze.org/entity/Q2122',
+		    'ariel': 'http://gratisdata.miraheze.org/entity/Q2117',
+		    'umbriel': 'http://gratisdata.miraheze.org/entity/Q2129',
+	    	'titania': 'http://gratisdata.miraheze.org/entity/Q2128',
+	    	'oberon': 'http://gratisdata.miraheze.org/entity/Q2125',
+		    'triton': 'http://gratisdata.miraheze.org/entity/Q982',
+	    	'pluto': 'http://gratisdata.miraheze.org/entity/Q2123',
         }
+        
