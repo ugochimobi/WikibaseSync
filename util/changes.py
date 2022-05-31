@@ -2,7 +2,7 @@ import requests
 from datetime import datetime, timedelta,timezone
 
 
-def recent_changes(rccontinue, minutes, url ="https://wikidata.org/w/api.php"):
+def recent_changes(rccontinue, minutes, url ="https://gratisdata.miraheze.org/w/api.php"):
     time = datetime.now(timezone.utc) - timedelta(minutes=minutes)
     S = requests.Session()
 
