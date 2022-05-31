@@ -1,8 +1,8 @@
 from pywikibot.config2 import usernames
 
 user_families_paths = ['./config']
-mylang = "wikidata"
-family = "wikidata"
+mylang = "en"
+family = "gratisdata"
 usernames['my']['my'] = u'admin'
 password_file = "user-password.py"
 minthrottle = 0
