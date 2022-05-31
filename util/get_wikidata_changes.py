@@ -6,7 +6,7 @@ def get_wikidata_changes(rccontinue, minutes):
     time = datetime.now(timezone.utc) - timedelta(minutes=minutes)
     S = requests.Session()
 
-    url = "https://wikidata.org/w/api.php"
+    url = "https://gratisdata.miraheze.org/w/api.php"
 
     parameters = {
         "format": "json",
